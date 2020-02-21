@@ -5,8 +5,10 @@ import android.graphics.Canvas;
 import java.util.HashMap;
 import java.util.List;
 
-public class ShapeContainer {
+import androidStudio.TP2.tp2_androidstudio.ShapeContainerChangeListener;
 
+public class ShapeContainer {
+    List<ShapeContainerChangeListener> ListShapeContainerlister;
     HashMap <DrawableShape , Place> canevas;
     public void draw(Canvas canvas){
         for (DrawableShape ds : canevas.keySet()) {
@@ -22,6 +24,12 @@ public class ShapeContainer {
             return false;
         }
         return true;
+    }
+    public void addChangeListener(ShapeContainerChangeListener listener){
+        ListShapeContainerlister.add(listener);
+    }
+    public void removeChangeListener(ShapeContainerChangeListener listener){
+        ListShapeContainerlister.remove(listener);
     }
 
 }
