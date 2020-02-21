@@ -1,9 +1,6 @@
 package androidStudio.TP2.tp2_androidstudio.View;
 
 import android.content.Context;
-import android.graphics.Canvas;
-
-import androidStudio.TP2.tp2_androidstudio.ShapeContainerChangeListener;
 
 public class View extends android.view.View {
 
@@ -14,9 +11,6 @@ public class View extends android.view.View {
     {
         this.model = shapeContainer;
         this.invalidate();
-
-        ShapeContainerChangeListener listener = () -> { this.invalidate(); }; // this is the view
-        model.addChangeListener(listener);
     }
     public void onDraw(Canvas canvas)
     {
