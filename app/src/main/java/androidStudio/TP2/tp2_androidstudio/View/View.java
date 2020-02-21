@@ -15,6 +15,6 @@ public class View extends android.view.View {
     public void onDraw(Canvas canvas)
     {
         if (model != null)
-            model.draw(canvas);
+            model.draw(canvas); //...
     }
 }
