@@ -15,7 +15,7 @@ public class SegmentShape implements DrawableShape {
     }
     public static int random(int lower, int upper ) {
 
-        return (int) (Math.random() * (upper - lower)) + lower;
+        return (int) (Math.random() * (upper - lower)) + lower;//test
     }
 }
 
