@@ -7,6 +7,7 @@ import android.view.MotionEvent;
 import androidStudio.TP2.View.View;
 import androidStudio.TP2.model.LineShape;
 import androidStudio.TP2.model.Place;
+import androidStudio.TP2.model.SegmentShape;
 import androidStudio.TP2.model.ShapeContainer;
 
 public class MainActivity extends AppCompatActivity {
@@ -39,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
                         // créer new Place(startX, startY, endX, endY);
                         Place p1 = new Place(startX,startY,endX,endY);
                         // créer new LineShape();
-                        LineShape ls1 = new LineShape();
+                        SegmentShape ls1 = new SegmentShape();
                         // container.add(lineShape, place);
                         container.add(ls1,p1);
 
