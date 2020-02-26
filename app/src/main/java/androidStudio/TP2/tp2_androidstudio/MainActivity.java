@@ -7,14 +7,18 @@ import android.view.MotionEvent;
 import androidStudio.TP2.View.View;
 import androidStudio.TP2.model.LineShape;
 import androidStudio.TP2.model.Place;
+import androidStudio.TP2.model.RectangleShape;
 import androidStudio.TP2.model.SegmentShape;
 import androidStudio.TP2.model.ShapeContainer;
+import androidStudio.TP2.model.ShapeKind;
 
 public class MainActivity extends AppCompatActivity {
     private float startX ;
     private float startY;
     private float endX;
     private float endY;
+    private ShapeKind selectedShapeKind;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                         // créer new Place(startX, startY, endX, endY);
                         Place p1 = new Place(startX,startY,endX,endY);
                         // créer new LineShape();
-                        SegmentShape ls1 = new SegmentShape();
+                        RectangleShape ls1 = new RectangleShape();
                         // container.add(lineShape, place);
                         container.add(ls1,p1);
 
