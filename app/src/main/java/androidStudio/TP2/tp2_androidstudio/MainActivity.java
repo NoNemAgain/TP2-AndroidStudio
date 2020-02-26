@@ -42,9 +42,12 @@ public class MainActivity extends AppCompatActivity {
                         LineShape ls1 = new LineShape();
                         // container.add(lineShape, place);
                         container.add(ls1,p1);
+
+
                         return true;
                     case MotionEvent.ACTION_MOVE:
                         // pour le cursif
+
                         return true;
                 }
 

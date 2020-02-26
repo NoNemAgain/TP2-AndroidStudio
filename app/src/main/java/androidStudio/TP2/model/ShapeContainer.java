@@ -10,6 +10,11 @@ import androidStudio.TP2.tp2_androidstudio.ShapeContainerChangeListener;
 public class ShapeContainer {
     List<ShapeContainerChangeListener> ListShapeContainerlister;
     HashMap <DrawableShape , Place> canevas;
+
+    public ShapeContainer(){
+        canevas = new HashMap<DrawableShape,Place>();
+    }
+
     public void draw(Canvas canvas){
         for (DrawableShape ds : canevas.keySet()) {
             Place place = canevas.get(ds);

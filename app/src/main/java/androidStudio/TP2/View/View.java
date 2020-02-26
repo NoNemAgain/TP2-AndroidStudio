@@ -2,7 +2,10 @@ package androidStudio.TP2.View;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.util.AttributeSet;
 import android.view.MotionEvent;
+
+import androidx.annotation.Nullable;
 
 import androidStudio.TP2.model.ShapeContainer;
 
@@ -15,6 +18,19 @@ public class View extends android.view.View {
     public View(Context context) {
         super(context);
     }
+
+    public View(Context context, @Nullable AttributeSet attrs) {
+        super(context, attrs);
+    }
+
+    public View(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+    }
+
+    public View(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+        super(context, attrs, defStyleAttr, defStyleRes);
+    }
+
     public void setModel(ShapeContainer shapeContainer)
     {
         this.model = shapeContainer;
