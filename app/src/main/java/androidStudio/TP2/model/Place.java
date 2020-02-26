@@ -3,32 +3,32 @@ package androidStudio.TP2.model;
 import java.util.Objects;
 
 public class Place {
-    private final float x1; // borne gauche
-    private final float x2; // borne droite
-    private final float y1;// borne gauche
-    private final float y2;// borne droite
+    private final float startX; // borne gauche
+    private final float endX; // borne droite
+    private final float startY;// borne gauche
+    private final float endY;// borne droite
 
     public Place(float x1,float x2,float y1, float y2){
-        this.x1 = x1;
-        this.x2 = x2;
-        this.y1 = y1;
-        this.y2 = y2;
+        this.startX = x1;
+        this.endX = x2;
+        this.startY = y1;
+        this.endY = y2;
     }
 
     public float getX1() {
-        return x1;
+        return startX;
     }
 
     public float getX2() {
-        return x2;
+        return endX;
     }
 
     public float getY1() {
-        return y1;
+        return startY;
     }
 
     public float getY2() {
-        return y2;
+        return endY;
     }
 
     @Override
@@ -37,6 +37,6 @@ public class Place {
             return false;
         }
         Place p = (Place)o;
-        return p.x1 == x1 && p.x2 == x2 && p.y1 == y1 && p.y2 == y2;
+        return p.startX == startX && p.endX == endX && p.startY == startY && p.endY == endY;
     }
 }
