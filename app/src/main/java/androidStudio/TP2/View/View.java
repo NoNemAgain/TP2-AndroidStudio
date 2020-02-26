@@ -42,7 +42,7 @@ public class View extends android.view.View {
         }
 
         this.model = shapeContainer;
-        this.model.addChangeListener(listener);
+       //this.model.addChangeListener(listener);
         this.invalidate();
     }
     public void onDraw(Canvas canvas) {
