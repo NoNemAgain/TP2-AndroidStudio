@@ -2,6 +2,7 @@ package androidStudio.TP2.model;
 
 import android.graphics.Canvas;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -13,6 +14,7 @@ public class ShapeContainer {
 
     public ShapeContainer(){
         canevas = new HashMap<DrawableShape,Place>();
+        ListShapeContainerlister = new ArrayList<ShapeContainerChangeListener>();
     }
 
     public void draw(Canvas canvas){
@@ -24,11 +26,15 @@ public class ShapeContainer {
 
     }
     public boolean add(DrawableShape shape, Place place){
-        canevas.put(shape, place);
-        if (canevas.get(shape).equals(place)){
-            return false;
-        }
-        return true;
+
+            Place p=canevas.put(shape,place);
+        fireListeners();
+        return p==null;
+    }
+    public void fireListeners()
+    {
+        for (ShapeContainerChangeListener listener: ListShapeContainerlister)
+            listener.onShapeContainerChange();
     }
     public void addChangeListener(ShapeContainerChangeListener listener){
         ListShapeContainerlister.add(listener);

@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
                 switch (event.getActionMasked()) {
                     case MotionEvent.ACTION_DOWN:
                         // enregistrer event.x event.y dans startX et startY
-                         startX = event.getX();
+                        startX = event.getX();
                         startY = event.getY();
                         return true;
                     case MotionEvent.ACTION_UP:
@@ -51,7 +51,8 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                 }
 
-                return false;            }
+                return false ;
+            }
         });
 
     }
