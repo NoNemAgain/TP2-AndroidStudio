@@ -16,15 +16,11 @@ public class CursiveShape implements DrawableShape {
     private final Vector2 start;
     private final Vector2 end;
     private List<Vector2> points;
-    private List<Vector2> lineDraw ;
-    private final ShapeContainer container ;
-    private ShapesBuilder sb = new ShapesBuilder();
-    public CursiveShape(Vector2 start, Vector2 end,List<Vector2> points, ShapeContainer container) {
+
+    public CursiveShape(Vector2 start, Vector2 end,List<Vector2> points) {
         this.start = start;
         this.end = end;
         this.points= points;
-        lineDraw=new ArrayList<Vector2>();
-        this.container=container;
 
     }
 
