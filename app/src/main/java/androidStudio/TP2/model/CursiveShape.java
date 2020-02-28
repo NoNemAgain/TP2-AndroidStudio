@@ -13,20 +13,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CursiveShape implements DrawableShape {
-    //List<Vector2> points = new ArrayList<Coordinnates>();
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    private final Vector2 start;
+    private final Vector2 end;
+    private List<Vector2> points;
+    public CursiveShape(Vector2 start, Vector2 end,List<Vector2> points) {
+        this.start = start;
+        this.end = end;
+        this.points= points;
+    }
 
     public void drawShape(ShapeProperties shapeProperties, Canvas canvas) {
-        /*Path path = new Path();
+        Path path = new Path();
 
         boolean first = true;
-        for(Coordinnates point : points){
+        for(Vector2 point : points){
             if(first){
                 first = false;
-                path.moveTo(point.getX(), point.getY());
+                path.moveTo(point.x(), point.y());
             }
             else{
-                path.lineTo(point.getX(), point.getY());
+                path.lineTo(point.x(), point.y());
             }
         }
         Paint paint = new Paint();
@@ -34,8 +40,5 @@ public class CursiveShape implements DrawableShape {
         canvas.drawPath(path, paint);
 
     }
-    public void addPoint(float X, float Y ){
-        points.add(new Coordinnates(X,Y));
-    }*/
-    }
 }
+

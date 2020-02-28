@@ -7,7 +7,6 @@ public class ShapesBuilder {
 
     public void setShapeKind(ShapeKind shapeKind) {
         this.shapeKind = shapeKind;
-        System.out.println("blabla" + shapeKind);
     }
 
     public void createShape(List<Vector2> points, ShapeContainer container) {
@@ -34,6 +33,8 @@ public class ShapesBuilder {
                 container.add(shape1, sp);
                 break;
             case CURSIVE:
+                DrawableShape shape2 = new CursiveShape(points.get(0), points.get(points.size() - 1),points);
+                container.add(shape2, sp);
                 break;
         }
 
