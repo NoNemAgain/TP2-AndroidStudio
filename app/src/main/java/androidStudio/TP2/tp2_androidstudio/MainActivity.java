@@ -18,8 +18,6 @@ import androidStudio.TP2.model.ShapesBuilder;
 import androidStudio.TP2.model.Vector2;
 
 public class MainActivity extends AppCompatActivity {
-    private Vector2 start;
-    private Vector2 end;
     private List<Vector2> points;
     private ShapeKind selectedShapeKind;
     private ShapesBuilder shapesBuilder;
@@ -29,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         final ShapeContainer container = new ShapeContainer();
+         ShapesBuilder shapesBuilder = new ShapesBuilder();
         points = new ArrayList<Vector2>();
         View v = findViewById(R.id.ViewXML);
         v.setModel(container);
@@ -38,22 +37,19 @@ public class MainActivity extends AppCompatActivity {
                 switch (event.getActionMasked()) {
                     case MotionEvent.ACTION_DOWN:
                         // enregistrer event.x event.y dans startX et startY
-
-                        start = new Vector2(event.getX(),event.getY());
                         addPoint(event.getX(),event.getY());
+                        points.clear();
                         return true;
                     case MotionEvent.ACTION_UP:
                         // enregistrer event.x eventY dans endX et endY
-                        end = new Vector2(event.getX(),event.getY());
                         addPoint(event.getX(),event.getY());
                         // créer new Place(startX, startY, endX, endY);
                         // TODO : trouver la shape properties
                         shapesBuilder.setShapeKind(ShapeKind.RECTANGLE);
                         // créer new LineShape();
-                        shapesBuilder.createShape(points);
+                        shapesBuilder.createShape(points, container);
                         // container.add(lineShape, place);
                         // TODO : donner la shapeProperties à la place de la Place
-
 
                         return true;
                     case MotionEvent.ACTION_MOVE:

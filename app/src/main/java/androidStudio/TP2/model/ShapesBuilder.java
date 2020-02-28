@@ -10,8 +10,7 @@ public class ShapesBuilder {
         System.out.println("blabla" + shapeKind);
     }
 
-    public void createShape(List<Vector2> points) {
-        ShapeContainer sc = new ShapeContainer();
+    public void createShape(List<Vector2> points, ShapeContainer container) {
         float minX = points.get(0).x();
         float minY = points.get(0).y();
         for (Vector2 point : points) {
@@ -28,11 +27,11 @@ public class ShapesBuilder {
         switch (shapeKind) {
             case SEGMENT:
                 DrawableShape shape = new LineShape(points.get(0), points.get(points.size() - 1));
-                sc.add(shape, sp);
+                container.add(shape, sp);
                 break;
             case RECTANGLE:
                 DrawableShape shape1 = new RectangleShape(points.get(0), points.get(points.size() - 1));
-                sc.add(shape1, sp);
+                container.add(shape1, sp);
                 break;
             case CURSIVE:
                 break;
