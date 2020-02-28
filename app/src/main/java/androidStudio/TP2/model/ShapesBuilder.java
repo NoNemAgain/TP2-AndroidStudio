@@ -7,9 +7,10 @@ public class ShapesBuilder {
 
     public void setShapeKind(ShapeKind shapeKind) {
         this.shapeKind = shapeKind;
+        System.out.println("blabla" + shapeKind);
     }
 
-    public DrawableShape createShape(List<Vector2> points) {
+    public void createShape(List<Vector2> points) {
         ShapeContainer sc = new ShapeContainer();
         float minX = points.get(0).x();
         float minY = points.get(0).y();
@@ -36,5 +37,6 @@ public class ShapesBuilder {
             case CURSIVE:
                 break;
         }
+
     }
 }

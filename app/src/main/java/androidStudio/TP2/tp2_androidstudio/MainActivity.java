@@ -38,14 +38,17 @@ public class MainActivity extends AppCompatActivity {
                 switch (event.getActionMasked()) {
                     case MotionEvent.ACTION_DOWN:
                         // enregistrer event.x event.y dans startX et startY
+
                         start = new Vector2(event.getX(),event.getY());
+                        addPoint(event.getX(),event.getY());
                         return true;
                     case MotionEvent.ACTION_UP:
                         // enregistrer event.x eventY dans endX et endY
                         end = new Vector2(event.getX(),event.getY());
+                        addPoint(event.getX(),event.getY());
                         // créer new Place(startX, startY, endX, endY);
                         // TODO : trouver la shape properties
-                        shapesBuilder.setShapeKind(ShapeKind.SEGMENT);
+                        shapesBuilder.setShapeKind(ShapeKind.RECTANGLE);
                         // créer new LineShape();
                         shapesBuilder.createShape(points);
                         // container.add(lineShape, place);
@@ -55,14 +58,18 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                     case MotionEvent.ACTION_MOVE:
                         // pour le cursif
-                        /*CursiveShape cs = new CursiveShape();
-                        cs.addPoint(event.getX(),event.getY());*/
+                        /*CursiveShape cs = new CursiveShape();*/
+                        addPoint(event.getX(),event.getY());
                         return true;
                 }
 
                 return false ;
             }
         });
+
+    }
+    public void addPoint(float X , float Y) {
+        points.add(new Vector2(X,Y));
 
     }
 }
