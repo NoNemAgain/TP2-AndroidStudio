@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 
 import androidStudio.TP2.View.View;
+import androidStudio.TP2.model.CursiveShape;
 import androidStudio.TP2.model.Place;
 import androidStudio.TP2.model.RectangleShape;
 import androidStudio.TP2.model.ShapeContainer;
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         final ShapeContainer container = new ShapeContainer();
 
@@ -50,7 +52,8 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                     case MotionEvent.ACTION_MOVE:
                         // pour le cursif
-
+                        /*CursiveShape cs = new CursiveShape();
+                        cs.addPoint(event.getX(),event.getY());*/
                         return true;
                 }
 

@@ -9,25 +9,33 @@ import android.os.Build;
 
 import androidx.annotation.RequiresApi;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CursiveShape implements DrawableShape {
-
-
+    List<Coordinnates> points = new ArrayList<Coordinnates>();
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public void drawShape(float left, float top, float right, float bottom, Canvas canvas) {
         Path path = new Path();
+
         boolean first = true;
-        for(Point point : points){
+        for(Coordinnates point : points){
             if(first){
                 first = false;
-                path.moveTo(point.x, point.y);
+                path.moveTo(point.getX(), point.getY());
             }
             else{
-                path.lineTo(point.x, point.y);
+                path.lineTo(point.getX(), point.getY());
             }
         }
+        Paint paint = new Paint();
+        paint.setColor(Color.BLACK);
         canvas.drawPath(path, paint);
 
+    }
+    public void addPoint(float X, float Y ){
+        points.add(new Coordinnates(X,Y));
     }
 
 }
