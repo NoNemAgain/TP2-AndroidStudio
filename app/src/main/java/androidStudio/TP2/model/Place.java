@@ -15,6 +15,11 @@ public class Place {
         this.endY = y2;
     }
 
+
+    public Place(float x1,float y1){
+        this(0,0,x1,y1);
+    }
+
     public float getX1() {
         return startX;
     }

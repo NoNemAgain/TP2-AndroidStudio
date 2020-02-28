@@ -42,10 +42,12 @@ public class MainActivity extends AppCompatActivity {
                         endX = event.getX();
                         endY = event.getY();
                         // créer new Place(startX, startY, endX, endY);
+                        // TODO : trouver la shape properties
                         Place p1 = new Place(startX,startY,endX,endY);
                         // créer new LineShape();
                         RectangleShape ls1 = new RectangleShape();
                         // container.add(lineShape, place);
+                        // TODO : donner la shapeProperties à la place de la Place
                         container.add(ls1,p1);
 
 

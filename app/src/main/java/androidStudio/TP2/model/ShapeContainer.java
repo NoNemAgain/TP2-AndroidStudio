@@ -19,8 +19,9 @@ public class ShapeContainer {
 
     public void draw(Canvas canvas){
         for (DrawableShape ds : canevas.keySet()) {
-            Place place = canevas.get(ds);
-                ds.drawShape(place.getX1(),place.getY1(),place.getX2(),place.getY2(),canvas);
+                Place place = canevas.get(ds);
+                // TODO : passer la shapeProperties au drawShape
+                ds.drawShape(shape,canvas);
 
         }
 
