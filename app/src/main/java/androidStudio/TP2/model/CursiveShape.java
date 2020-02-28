@@ -16,28 +16,47 @@ public class CursiveShape implements DrawableShape {
     private final Vector2 start;
     private final Vector2 end;
     private List<Vector2> points;
-    public CursiveShape(Vector2 start, Vector2 end,List<Vector2> points) {
+    private List<Vector2> lineDraw ;
+    private final ShapeContainer container ;
+    private ShapesBuilder sb = new ShapesBuilder();
+    public CursiveShape(Vector2 start, Vector2 end,List<Vector2> points, ShapeContainer container) {
         this.start = start;
         this.end = end;
         this.points= points;
+        lineDraw=new ArrayList<Vector2>();
+        this.container=container;
+
     }
 
     public void drawShape(ShapeProperties shapeProperties, Canvas canvas) {
-        Path path = new Path();
+        for (int i=1;i<points.size()-1;i++){
+
+            lineDraw.add(points.get(i));
+            lineDraw.add(points.get(i+1));
+            sb.createShape(lineDraw,container);
+            lineDraw.clear();
+        }
+
+        /*Path path = new Path();
+
 
         boolean first = true;
         for(Vector2 point : points){
+
             if(first){
                 first = false;
+
                 path.moveTo(point.x(), point.y());
             }
             else{
+
                 path.lineTo(point.x(), point.y());
             }
         }
         Paint paint = new Paint();
         paint.setColor(Color.BLACK);
-        canvas.drawPath(path, paint);
+        paint.setStyle(Paint.Style.STROKE);
+        canvas.drawPath(path, paint);*/
 
     }
 }
