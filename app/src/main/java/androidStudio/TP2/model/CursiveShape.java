@@ -29,15 +29,9 @@ public class CursiveShape implements DrawableShape {
     }
 
     public void drawShape(ShapeProperties shapeProperties, Canvas canvas) {
-        for (int i=1;i<points.size()-1;i++){
 
-            lineDraw.add(points.get(i));
-            lineDraw.add(points.get(i+1));
-            sb.createShape(lineDraw,container);
-            lineDraw.clear();
-        }
 
-        /*Path path = new Path();
+        Path path = new Path();
 
 
         boolean first = true;
@@ -46,17 +40,17 @@ public class CursiveShape implements DrawableShape {
             if(first){
                 first = false;
 
-                path.moveTo(point.x(), point.y());
+                path.moveTo(point.x()+shapeProperties.getX(), point.y()+shapeProperties.getY());
             }
             else{
 
-                path.lineTo(point.x(), point.y());
+                path.lineTo(point.x()+shapeProperties.getX(), point.y()+shapeProperties.getY());
             }
         }
         Paint paint = new Paint();
         paint.setColor(Color.BLACK);
         paint.setStyle(Paint.Style.STROKE);
-        canvas.drawPath(path, paint);*/
+        canvas.drawPath(path, paint);
 
     }
 }

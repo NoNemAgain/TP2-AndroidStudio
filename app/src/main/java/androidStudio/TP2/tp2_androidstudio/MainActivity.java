@@ -37,8 +37,9 @@ public class MainActivity extends AppCompatActivity {
                 switch (event.getActionMasked()) {
                     case MotionEvent.ACTION_DOWN:
                         // enregistrer event.x event.y dans startX et startY
-                        addPoint(event.getX(),event.getY());
                         points.clear();
+                        addPoint(event.getX(),event.getY());
+
                         return true;
                     case MotionEvent.ACTION_UP:
                         // enregistrer event.x eventY dans endX et endY
