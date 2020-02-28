@@ -3,6 +3,8 @@ package androidStudio.TP2.tp2_androidstudio;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         final ShapeContainer container = new ShapeContainer();
          ShapesBuilder shapesBuilder = new ShapesBuilder();
+        ListView lv = (ListView)findViewById(R.id.shapeList);
+        lv.setAdapter(new ArrayAdapter<ShapeKind>(this, android.R.layout.simple_list_item_1, ShapeKind.values()));
         points = new ArrayList<Vector2>();
         View v = findViewById(R.id.ViewXML);
         v.setModel(container);
