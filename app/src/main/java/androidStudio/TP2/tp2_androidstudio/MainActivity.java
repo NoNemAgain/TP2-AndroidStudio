@@ -46,9 +46,11 @@ public class MainActivity extends AppCompatActivity {
                         addPoint(event.getX(),event.getY());
                         // créer new Place(startX, startY, endX, endY);
                         // TODO : trouver la shape properties
-                        shapesBuilder.setShapeKind(ShapeKind.CURSIVE);
+                        shapesBuilder.setShapeKind(ShapeKind.RECTANGLE);
                         // créer new LineShape();
-                        shapesBuilder.createShape(points, container);
+                        List<Vector2> copy = new ArrayList<>();
+                        copy.addAll(points);
+                        shapesBuilder.createShape(copy, container);
                         // container.add(lineShape, place);
                         // TODO : donner la shapeProperties à la place de la Place
 
