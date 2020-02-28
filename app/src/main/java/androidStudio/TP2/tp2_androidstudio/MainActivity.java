@@ -5,10 +5,8 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 
 import androidStudio.TP2.View.View;
-import androidStudio.TP2.model.LineShape;
 import androidStudio.TP2.model.Place;
 import androidStudio.TP2.model.RectangleShape;
-import androidStudio.TP2.model.SegmentShape;
 import androidStudio.TP2.model.ShapeContainer;
 import androidStudio.TP2.model.ShapeKind;
 
