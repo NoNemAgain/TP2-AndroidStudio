@@ -10,25 +10,24 @@ import androidStudio.TP2.tp2_androidstudio.ShapeContainerChangeListener;
 
 public class ShapeContainer {
     List<ShapeContainerChangeListener> ListShapeContainerlister;
-    HashMap <DrawableShape , Place> canevas;
+    HashMap <DrawableShape ,ShapeProperties> canevas;
 
     public ShapeContainer(){
-        canevas = new HashMap<DrawableShape,Place>();
+        canevas = new HashMap<DrawableShape,ShapeProperties>();
         ListShapeContainerlister = new ArrayList<ShapeContainerChangeListener>();
     }
 
     public void draw(Canvas canvas){
         for (DrawableShape ds : canevas.keySet()) {
-                Place place = canevas.get(ds);
+                ShapeProperties shapeProperties = canevas.get(ds);
                 // TODO : passer la shapeProperties au drawShape
-                ds.drawShape(shape,canvas);
+                ds.drawShape(shapeProperties,canvas);
 
         }
 
     }
-    public boolean add(DrawableShape shape, Place place){
-
-            Place p=canevas.put(shape,place);
+    public boolean add(DrawableShape shape, ShapeProperties shapeProperties){
+        ShapeProperties p=canevas.put(shape,shapeProperties);
         fireListeners();
         return p==null;
     }

@@ -15,8 +15,8 @@ import java.util.List;
 public class CursiveShape implements DrawableShape {
     List<Coordinnates> points = new ArrayList<Coordinnates>();
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-    @Override
-    public void drawShape(float left, float top, float right, float bottom, Canvas canvas) {
+
+    public void drawShape(ShapeProperties shapeProperties, Canvas canvas) {
         Path path = new Path();
 
         boolean first = true;

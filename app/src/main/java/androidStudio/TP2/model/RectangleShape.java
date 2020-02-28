@@ -5,13 +5,20 @@ import android.graphics.Color;
 import android.graphics.Paint;
 
 public class RectangleShape implements DrawableShape {
+    private final Vector2 start;
+    private final Vector2 end;
 
+    public RectangleShape(Vector2 start, Vector2 end) {
+        this.start = start;
+        this.end = end;
+    }
 
     @Override
-    public void drawShape(float left, float top, float right, float bottom, Canvas canvas) {
+    public void drawShape(ShapeProperties shapeProperties, Canvas canvas) {
         Paint paint = new Paint();
         paint.setColor(Color.BLACK);
-        canvas.drawRect(left,top,right,bottom,paint); ;
+        canvas.drawRect(start.x() + shapeProperties.getX(),start.y() + shapeProperties.getY(), end.x() + shapeProperties.getX(), end.y() + shapeProperties.getY(), paint);
+
     }
 
 }

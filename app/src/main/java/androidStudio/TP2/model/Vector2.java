@@ -21,7 +21,7 @@ public class Vector2 {
         return y;
     }
 
-    public void y(float y) {
+    public void y(float y){
         this.y = y;
     }
 }
